@@ -59,29 +59,28 @@ export default function HomePage() {
     }
   }
 
-  const deposit = async() => {
+  const fir = async() => {
     if (atm) {
-      let tx = await atm.deposit(1);
+      let tx = await atm.first(21);
       await tx.wait()
       getBalance();
     }
   }
 
-  const withdraw = async() => {
+  const sec = async() => {
     if (atm) {
-      let tx = await atm.withdraw(1);
+      let tx = await atm.second(16);
       await tx.wait()
       getBalance();
     }
   }
 
   const initUser = () => {
-    // Check to see if user has Metamask
+  
     if (!ethWallet) {
-      return <p>Please install Metamask in order to use this ATM.</p>
+      return <p>Please install Metamask in order to use this playground.</p>
     }
 
-    // Check to see if user is connected. If not, connect to their account
     if (!account) {
       return <button onClick={connectAccount}>Please connect your Metamask wallet</button>
     }
@@ -94,8 +93,8 @@ export default function HomePage() {
       <div>
         <p>Your Account: {account}</p>
         <p>Your Balance: {balance}</p>
-        <button onClick={deposit}>Deposit 1 ETH</button>
-        <button onClick={withdraw}>Withdraw 1 ETH</button>
+        <button onClick={fir}>3 & 7 Multiple</button>
+        <button onClick={sec}>2 & 8 Multiple</button>
       </div>
     )
   }
@@ -104,11 +103,13 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to the Metacrafters ATM!</h1></header>
+      <header><h1>Welcome to my playground</h1></header>
       {initUser()}
       <style jsx>{`
         .container {
-          text-align: center
+          text-align: center;
+          background-color:green;
+          
         }
       `}
       </style>
