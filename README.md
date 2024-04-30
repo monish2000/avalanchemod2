@@ -1,6 +1,6 @@
 # Playground
 
-These are the programs which creates a frontend page and links it to the cryto wallet
+These are the programs which creates a frontend page and links it to the cryto wallet, if the input is divisible 3or7 10 is added to the balance , if it is divisible by 2or8 5 is subtracted from secbalance. 
 
 ## Description
 
